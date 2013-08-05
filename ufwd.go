@@ -8,6 +8,8 @@ import (
 	"flag"
 )
 
+const Version = "0.0.1"
+
 type Config struct {
 	BufSize  uint
 	Proto    string
@@ -16,7 +18,10 @@ type Config struct {
 	Debug    bool
 }
 
-var conf = new(Config)
+var (
+	conf        = new(Config)
+	showVersion = false
+)
 
 func init() {
 	log.SetFlags(0)
@@ -26,10 +31,16 @@ func init() {
 	flag.StringVar(&conf.Addr, "addr", "", "bind address")
 	flag.StringVar(&conf.DestAddr, "dest", "", "destination address")
 	flag.BoolVar(&conf.Debug, "debug", false, "enable debug mode")
+	flag.BoolVar(&showVersion, "version", false, "display version number and exit")
 	flag.Parse()
 }
 
 func main() {
+	if showVersion {
+		fmt.Printf("ufwd v%s\n", Version)
+		return
+	}
+
 	if conf.BufSize == 0 {
 		log.Fatalf("ERROR: bufsize must be greater than 0")
 	}

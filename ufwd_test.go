@@ -1,12 +1,12 @@
 package main
 
 import (
-	"testing"
-	"net"
-	"time"
 	"fmt"
-	"log"
 	"io/ioutil"
+	"log"
+	"net"
+	"testing"
+	"time"
 )
 
 var msgs = make(chan string)
@@ -77,7 +77,7 @@ func TestServer(t *testing.T) {
 		}
 
 		select {
-		case rmsg := <- msgs:
+		case rmsg := <-msgs:
 			if rmsg != msg {
 				t.Errorf("Expected to get '%s', got '%s'", msg, rmsg)
 			}

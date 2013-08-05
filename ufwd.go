@@ -1,11 +1,11 @@
 package main
 
 import (
-	"net"
-	"log"
-	"io"
-	"fmt"
 	"flag"
+	"fmt"
+	"io"
+	"log"
+	"net"
 )
 
 const Version = "0.0.1"
@@ -56,7 +56,7 @@ func main() {
 
 func debugf(format string, args ...interface{}) {
 	if conf.Debug {
-		log.Printf("DEBUG: " + format, args...)
+		log.Printf("DEBUG: "+format, args...)
 	}
 }
 

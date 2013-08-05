@@ -25,6 +25,12 @@ a syslog server running on port `514` of `syslog.domain.com` host.
 
 Check `ufwd -help` for list of all available options.
 
+## Disclaimer
+
+Of course, saying that `ufwd` is a daemon is quite too much. It's mechanism is the simplest
+possible - if any error encountered, then exit and start over (via external supervisor). 
+The app is intend to run as a daemon, thus the `d` suffix in the name.
+
 ## Hacking
 
 Not much to say. If you wanna hack on `ufwd` just clone the repo and play with the

@@ -1,7 +1,8 @@
 VERSION=$(shell ./ufwd -v 2>&1)
 MACHINE=$(shell uname -sp | tr '[A-Z]' '[a-z]' | sed -e 's/\s/-/')
 
-all: test
+all:
+	go build .
 
 test:
 	go test ./...

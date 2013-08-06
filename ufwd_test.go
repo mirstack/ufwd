@@ -17,7 +17,7 @@ func init() {
 	conf = &Config{
 		BufSize:  1024,
 		Proto:    "udp4",
-		Addr:     ":5566",
+		BindAddr:     ":5566",
 		DestAddr: ":5567",
 		Debug:    true,
 	}
@@ -52,7 +52,7 @@ func init() {
 }
 
 func TestServer(t *testing.T) {
-	addr, err := net.ResolveUDPAddr(conf.Proto, conf.DestAddr)
+	addr, err := net.ResolveUDPAddr(conf.Proto, conf.BindAddr)
 	if err != nil {
 		t.Errorf("Expected to resolve the addr, got error: %v", err)
 		return

@@ -1,4 +1,4 @@
-# ufwd - UDP Forwarding Daemon
+# ufwd - UDP Forwarding Daemon [![Build Status](https://travis-ci.org/mirstack/ufwd.png?branch=master)](https://travis-ci.org/mirstack/ufwd)
 
 This is super simple (~ 100 loc) and reliable UDP forwarder/proxy written in Golang.
 

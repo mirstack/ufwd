@@ -1,6 +1,6 @@
 # ufwd - UDP Forwarding Daemon
 
-This is super simple (~ 100 loc) and reliable UDP forwarder/proxy written in Golang. 
+This is super simple (~ 100 loc) and reliable UDP forwarder/proxy written in Golang.
 
 ## Installation
 
@@ -16,7 +16,7 @@ it package and then unpack with desired prefix:
 The package has no external dependencies and is easily go-installable:
 
     $ go install gitbub.com/mirstack/ufwd
-    
+
 You can also download it and build manually.
 
     $ git clone https://github.com/mirstack/ufwd.git
@@ -27,17 +27,17 @@ You can also download it and build manually.
 
 Here's an example of a forwarding server:
 
-    $ ufwd -addr :514 -dest syslog.domain.com:514
-    
+    $ ufwd :514 syslog.domain.com:514
+
 In this example all the local UDP connections on port `514` will be passed through to
 a syslog server running on port `514` of `syslog.domain.com` host.
 
-Check `ufwd -help` for list of all available options.
+Check `ufwd -h` for list of all available options.
 
 ## Disclaimer
 
 Of course, saying that `ufwd` is a daemon is quite too much. It's mechanism is the simplest
-possible - if any error encountered, then exit and start over (via external supervisor). 
+possible - if any error encountered, then exit and start over (via external supervisor).
 The app is intend to run as a daemon, thus the `d` suffix in the name.
 
 ## Hacking
@@ -46,6 +46,15 @@ Not much to say. If you wanna hack on `ufwd` just clone the repo and play with t
 code. You can run the tests at any time with standard `go test` tool:
 
     $ go test .
+
+### Releasing
+
+To build a new release use bundled make target called `pack`:
+
+    $ make pack
+
+It will wrap the binary and other needed files into a zip archive and save
+it to `pkg/ufwd-x.y.z-{os}-{arch}.zip`.
 
 ## Contribute
 

@@ -1,0 +1,70 @@
+ufwd(1) -- the uber simple UDP forwarding daemon
+================================================
+
+## SYNOPSIS
+
+`ufwd` [-b <SIZE>] [-d] [-h] [-p <PROTOCOL>] [-v] <BIND> <CONNECT>
+
+## DESCRIPTION
+
+Start UDP forwaring server on address <BIND> that forwards all incoming
+connections to address <CONNECT>.
+
+The server doesn't try to be smart in any way, thus it doesn't try to deal
+with protocol errors or invalid states. If anything goes wrong with the connection
+or with the server state it simply exits. The cost of bringing it back to life
+is none comparing with cost of handling all the error cases in the code
+base. ~100LOC for the win!
+
+## OPTIONS
+
+  * `-b` <SIZE>:
+    Maximum buffer size in bytes. Larger packet will be cut to fit it.
+    Default: 1024.
+
+  * `-d`:
+    Enables debug mode.
+
+  * `-h`:
+    Shows help screen.
+
+  * `-p` <PROTOCOL>:
+    Which protocol to use. Can be one of: udp, udp4 or udp6. Default: udp4.
+
+  * `-v`:
+    Print version number and exit.
+
+## EXAMPLES
+
+Here's few examples of how to start a forwarder:
+
+    $ ufwd :514 log.domain.com:514
+    $ ufwd -b 1024 -p udp4 127.0.0.1:3330 10.0.1.2:330
+
+## REPORTING BUGS
+
+If you found any problem with the application, please start an issue on
+**project's issues page**[2].
+
+## AUTHOR
+
+Chris Kowalik, chris@nu7hat.ch.
+
+## COPYRIGHT
+
+Copyright 2013 (C) by VividCortext, support@vividcortex.com.<br />
+Released under MIT License.
+
+## NOTES
+
+  1. Project home:<br />
+     http://mirstack.org/uwfd/
+
+  2. Project's issue tracker:<br />
+     https://github.com/mirstack/ufwd/issues
+
+  3. Git repository:<br />
+     https://github.com/mirstack/ufwd.git
+
+  4. VividCortex support list:<br />
+     support@vividcortex.com

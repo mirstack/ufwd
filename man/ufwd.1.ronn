@@ -58,7 +58,7 @@ Released under MIT License.
 ## NOTES
 
   1. Project home:<br />
-     http://mirstack.org/uwfd/
+     http://mirstack.org/ufwd/
 
   2. Project's issue tracker:<br />
      https://github.com/mirstack/ufwd/issues

@@ -5,7 +5,7 @@ This is super simple (~ 100 loc) and reliable UDP forwarder/proxy written in Gol
 ## Installation
 
 To install `ufwd` go to [releases][releases] page and pick latest package. Download
-it package and then unpack with desired prefix:
+it and unpack with desired prefix:
 
     $ unzip -d /usr/local ufwd-*.zip
 

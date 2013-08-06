@@ -17,7 +17,7 @@ func init() {
 	conf = &Config{
 		BufSize:  1024,
 		Proto:    "udp4",
-		BindAddr:     ":5566",
+		BindAddr: ":5566",
 		DestAddr: ":5567",
 		Debug:    true,
 	}

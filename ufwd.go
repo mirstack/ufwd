@@ -25,11 +25,11 @@ type Config struct {
 var conf = new(Config)
 
 // showVersion when set to true makes the app to print current version and exit.
-var	showVersion = false
+var showVersion = false
 
 // debugf is a default debugging function. If debug mode is enabled it will be
 // replaced with log.Printf function.
-var debugf = func (f string, a ...interface{}) {}
+var debugf = func(f string, a ...interface{}) {}
 
 func init() {
 	log.SetFlags(0)

@@ -9,9 +9,9 @@ test:
 
 pack: manpage
 	go build .
-	mkdir -p tmp/bin tmp/share/man pkg
+	mkdir -p tmp/bin tmp/share/man/man1 pkg
 	cp ufwd tmp/bin/
-	cp man/ufwd.1 tmp/share/man/
+	cp man/ufwd.1 tmp/share/man/man1/
 	cd tmp && zip -r ../pkg/ufwd-$(VERSION)-$(MACHINE).zip bin share
 	rm -r tmp
 

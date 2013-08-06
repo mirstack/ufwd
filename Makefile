@@ -1,4 +1,5 @@
-VERSION=$(shell ./ufwd -v 2>&1)
+PROJECT=ufwd
+VERSION=$(shell ./$(PROJECT) -v 2>&1)
 MACHINE=$(shell uname -sp | tr '[A-Z]' '[a-z]' | sed -e 's/\s/-/')
 
 all:
@@ -11,9 +12,9 @@ pack: manpage
 	go build .
 	mkdir -p tmp/bin tmp/share/man/man1 pkg
 	cp ufwd tmp/bin/
-	cp man/ufwd.1 tmp/share/man/man1/
-	cd tmp && zip -r ../pkg/ufwd-$(VERSION)-$(MACHINE).zip bin share
+	cp man/*.1 tmp/share/man/man1/
+	cd tmp && zip -r ../pkg/$(PROJECT)-$(VERSION)-$(MACHINE).zip bin share
 	rm -r tmp
 
 manpage:
-	ronn --manual="Mir's ufwd manual" --organization='Mir' man/*.ronn
+	ronn --manual="Mir's $(PROJECT) manual" --organization='Mir' man/*.ronn

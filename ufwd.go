@@ -10,7 +10,7 @@ import (
 )
 
 // Version stores current version number.
-const Version = "0.1.0"
+const Version = "0.1.1"
 
 // Config structure represents app's configuration.
 type Config struct {

@@ -16,4 +16,4 @@ pack: manpage
 	rm -r tmp
 
 manpage:
-	ronn --manual="Mir's uwfd manual" --organization='Mir' man/*.ronn
+	ronn --manual="Mir's ufwd manual" --organization='Mir' man/*.ronn

@@ -1,4 +1,6 @@
-# ufwd [![Build Status](https://travis-ci.org/mirstack/ufwd.png?branch=master)](https://travis-ci.org/mirstack/ufwd)
+# ufwd 
+
+[![Build Status](https://travis-ci.org/mirstack/ufwd.png?branch=master)](https://travis-ci.org/mirstack/ufwd)
 
 **UDP Forwarding Daemon.**
 
